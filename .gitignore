@@ -1,0 +1,27 @@
+# Ignore the public directory where Hugo builds the site
+/public/
+
+# Ignore the Hugo cache
+/.hugo_cache/
+
+# Ignore Hugo build lock file
+/.hugo_build.lock
+
+# Ignore temporary files created by the editor
+*.swp
+*.swo
+*.bak
+*.tmp
+*~
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore the node_modules directory
+node_modules/
+
+# Ignore OS-specific files
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
