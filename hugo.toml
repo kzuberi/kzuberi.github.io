@@ -1,4 +1,16 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://kzuberi.github.io/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
-theme = "dream"
+theme = 'PaperMod'
+
+# [params]
+#   description = "A simple Hugo blog"
+#   keywords = "hugo, blog, static site"
+#   author = "kz"
+#   rss = true
+
+#   favicon = "favicon.ico"
+
+
+[taxonomies]
+  tag = "tags"
