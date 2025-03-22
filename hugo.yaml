@@ -1,0 +1,38 @@
+baseURL: "https://kzuberi.github.io/"
+title: "kzuberi.github.io"
+paginate: 10
+theme: "PaperMod"
+defaultContentLanguage: "en"
+
+menu:
+  main:  
+    - name: Tags
+      url: /tags/
+      weight: 20
+    - name: "About"
+      url: /about/
+      weight: 30
+      
+taxonomies:
+  tag: tags
+
+params:
+  defaultTheme: dark
+  fontAwesome: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+
+assets:
+  disableHLJS: true
+  favicon: "favicon.ico"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    style: "monokai"
