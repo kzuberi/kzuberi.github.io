@@ -1,8 +1,11 @@
 baseURL: "https://kzuberi.github.io/"
 title: "kzuberi.github.io"
-paginate: 10
 theme: "PaperMod"
 defaultContentLanguage: "en"
+
+params:
+  defaultTheme: dark
+  fontAwesome: true
 
 menu:
   main:  
@@ -12,13 +15,12 @@ menu:
     - name: "About"
       url: /about/
       weight: 30
-      
+
 taxonomies:
   tag: tags
 
-params:
-  defaultTheme: dark
-  fontAwesome: true
+pagination:
+  pagerSize: 20
 
 outputs:
   home:
