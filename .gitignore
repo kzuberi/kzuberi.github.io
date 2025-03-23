@@ -7,6 +7,9 @@
 # Ignore Hugo build lock file
 /.hugo_build.lock
 
+# Ignore Hugo generated resources
+/resources/_gen/
+
 # Ignore temporary files created by the editor
 *.swp
 *.swo
