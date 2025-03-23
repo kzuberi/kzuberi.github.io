@@ -37,9 +37,9 @@ markup:
   highlight:
     lineNos: true
     noClasses: false
-    codeFences: true
-    style: "github"
+
 
 module:
   imports:
+    # Note this is redirected to "github.com/reorx/hugo-PaperModX" in go.mod
     - path: "github.com/adityatelange/hugo-PaperMod"
