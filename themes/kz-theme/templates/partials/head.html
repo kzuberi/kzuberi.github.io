@@ -1,0 +1,52 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{% set page_title = config.title %}
+{% set page_description = config.description | default(value="") %}
+{% set canonical_url = config.base_url %}
+{% if page is defined %}
+  {% set page_title = page.title ~ " | " ~ config.title %}
+  {% if page.description %}
+    {% set page_description = page.description %}
+  {% elif page.summary %}
+    {% set page_description = page.summary | striptags %}
+  {% endif %}
+  {% set canonical_url = page.permalink %}
+{% elif section is defined and section.title %}
+  {% set page_title = section.title ~ " | " ~ config.title %}
+  {% if section.description %}
+    {% set page_description = section.description %}
+  {% endif %}
+  {% set canonical_url = section.permalink %}
+{% elif term is defined %}
+  {% set page_title = term.name ~ " | " ~ config.title %}
+  {% set canonical_url = term.permalink %}
+{% elif taxonomy is defined %}
+  {% set page_title = taxonomy.name ~ " | " ~ config.title %}
+  {% set canonical_url = config.base_url ~ "/" ~ taxonomy.name ~ "/" %}
+{% endif %}
+
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page_description }}">
+<link rel="canonical" href="{{ canonical_url }}">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/main.css">
+
+{% if config.markdown.highlight_code and config.markdown.highlight_theme == "css" %}
+<link id="syntax-theme-light" rel="stylesheet" href="/syntax-theme-light.css" media="(prefers-color-scheme: light)">
+<link id="syntax-theme-dark" rel="stylesheet" href="/syntax-theme-dark.css" media="(prefers-color-scheme: dark)">
+{% endif %}
+
+{% if config.generate_feeds %}
+<link rel="alternate" type="application/rss+xml" href="/rss.xml">
+{% endif %}
+
+<noscript>
+  <style>
+    #theme-toggle,
+    .top-link {
+      display: none;
+    }
+  </style>
+</noscript>

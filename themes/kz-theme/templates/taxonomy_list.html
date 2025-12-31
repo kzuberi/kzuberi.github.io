@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body_class %}list-page kind-taxonomy{% endblock body_class %}
+
+{% block content %}
+  <header class="page-header">
+    <h1>{{ taxonomy.name | capitalize }}</h1>
+  </header>
+  <ul class="terms-tags">
+    {% for term in terms %}
+      <li>
+        <a href="{{ term.permalink }}">{{ term.name }} ({{ term.pages | length }})</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

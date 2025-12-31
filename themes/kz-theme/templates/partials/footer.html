@@ -1,0 +1,8 @@
+<footer class="footer">
+  <span>&copy; {{ now() | date(format="%Y") }} <a href="{{ config.base_url }}">{{ config.title }}</a></span>
+  {% if config.extra.footer_license_url and config.extra.footer_license_name %}
+  <span style="display: inline-block; margin-left: 1em;">
+    <a href="{{ config.extra.footer_license_url }}">{{ config.extra.footer_license_name }}</a>
+  </span>
+  {% endif %}
+</footer>

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block body_class %}list-page kind-section{% endblock body_class %}
+
+{% block content %}
+  <header class="page-header">
+    <h1>{{ section.title }}</h1>
+  </header>
+
+  {% if paginator is defined %}
+    {% set pages = paginator.pages %}
+  {% else %}
+    {% set pages = section.pages | sort(attribute="date") | reverse %}
+  {% endif %}
+
+  {% for page in pages %}
+    <article class="post-entry">
+      <header class="entry-header">
+        <h2>{{ page.title }}{% if page.draft %}<sup><span class="entry-isdraft">&nbsp;&nbsp;[Draft]</span></sup>{% endif %}</h2>
+      </header>
+      <section class="entry-content">
+        {{ page.summary | safe }}
+      </section>
+      <footer class="entry-footer">
+        <span>{{ page.date | date(format="%B %d, %Y") }}</span>
+      </footer>
+      <a class="entry-link" aria-label="post link to {{ page.title }}" href="{{ page.permalink }}"></a>
+    </article>
+  {% endfor %}
+
+  {% if paginator is defined and (paginator.next or paginator.previous) %}
+    <nav class="pagination">
+      {% if paginator.previous %}
+        <a class="prev" href="{{ paginator.previous }}">Previous</a>
+      {% endif %}
+      {% if paginator.next %}
+        <a class="next" href="{{ paginator.next }}">Next</a>
+      {% endif %}
+    </nav>
+  {% endif %}
+{% endblock content %}

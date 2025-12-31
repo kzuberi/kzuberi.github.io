@@ -1,0 +1,30 @@
+base_url = "https://kzuberi.github.io"
+title = "kzuberi.github.io"
+description = ""
+default_language = "en"
+theme = "kz-theme"
+build_search_index = false
+generate_feeds = true
+feed_filenames = ["rss.xml"]
+
+taxonomies = [
+  { name = "tags" },
+]
+
+[markdown]
+highlight_code = true
+highlight_theme = "css"
+highlight_themes_css = [
+  { theme = "base16-ocean-light", filename = "syntax-theme-light.css" },
+  { theme = "base16-ocean-dark", filename = "syntax-theme-dark.css" },
+]
+render_emoji = false
+
+[extra]
+default_theme = "auto"
+show_theme_toggle = true
+show_top_link = true
+menu = [
+  { name = "Tags", url = "/tags/" },
+  { name = "About", url = "/about/" },
+]
