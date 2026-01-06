@@ -1,30 +1,15 @@
-# Ignore the public directory where Hugo builds the site
+# Zola build output
 /public/
 
-# Ignore the Hugo cache
-/.hugo_cache/
+# Zola cache
+/.zola-cache/
 
-# Ignore Hugo build lock file
-/.hugo_build.lock
+# Sass cache
+/.sass-cache/
 
-# Ignore Hugo generated resources
-/resources/_gen/
+# OS/editor files
+.DS_Store
+Thumbs.db
 
-# Ignore temporary files created by the editor
-*.swp
-*.swo
-*.bak
-*.tmp
-*~
-
-# Ignore IDE files
-.vscode/
-.idea/
-
-# Ignore the node_modules directory
-node_modules/
-
-# Ignore OS-specific files
-.DS_Store  # macOS
-Thumbs.db  # Windows
-
+# Zola generated syntax highlight CSS
+/static/syntax-theme-*.css

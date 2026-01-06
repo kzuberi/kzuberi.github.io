@@ -1,16 +1,25 @@
-
 # list commands
 default:
-    just --list
+    just --list --unsorted
 
 # build with drafts and serve locally
 serve:
-    hugo serve --buildDrafts --disableFastRender
+    zola serve --drafts --interface 127.0.0.1 --port 1111
 
 # build release site and serve locally
 serve-release:
-    hugo --cleanDestinationDir serve
+    zola serve --interface 127.0.0.1 --port 1111
 
-# new post, e.g. "just new 2025/my-title.md", or "just new 2025/my-title" for a folder
+# build site (includes drafts)
+build:
+    zola build --drafts
+
+# build release site
+build-release:
+    zola build
+
+# new post, e.g. "just new 2025/my-title" or "just new my-title"
 new title:
-    hugo new content content/posts/{{title}}
+    @mkdir -p "content/posts/$(dirname "{{title}}")"
+    @printf '+++\ntitle = "%s"\ndate = %s\ndraft = true\n+++\n\n' "{{title}}" "$(date -Iseconds)" > "content/posts/{{title}}.md"
+    @echo "Created content/posts/{{title}}.md"
