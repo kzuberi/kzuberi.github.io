@@ -1,9 +1,7 @@
 +++
 title = "About"
-date = 2025-03-22T17:51:49-04:00
+date = 2026-01-05T22:10:11-05:00
 draft = false
 +++
 
-Coding in the vicinity of Science. Computational-biology, bioinformatics, fast-fading memories of remote sensing and still dimmer recollections of numerical analysis.
-
-Contact by [email](mailto:kzthisthat@gmail.com).
+Coding in the vicinity of Science. Contact by [email](mailto:kzthisthat@gmail.com).

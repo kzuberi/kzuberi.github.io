@@ -23,3 +23,7 @@ new title:
     @mkdir -p "content/posts/$(dirname "{{title}}")"
     @printf '+++\ntitle = "%s"\ndate = %s\ndraft = true\n+++\n\n' "{{title}}" "$(date -Iseconds)" > "content/posts/{{title}}.md"
     @echo "Created content/posts/{{title}}.md"
+
+# current date for header metadata
+now:
+    date -Iseconds
